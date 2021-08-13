@@ -1,0 +1,14 @@
+#!/usr/bin/env php
+<?php
+
+define("BADCMS_CLI",true);
+
+require 'bootstrap/autoload.php';
+
+$app = require_once __DIR__."/bootstrap/app.php";
+
+[
+    \BadCMS\Console\Functions::load,
+];
+
+\BadCMS\Console\handleCLI(\BadCMS\Console\argvInput());

@@ -1,0 +1,37 @@
+{
+  "name": "badcms/badcms",
+  "description": "Bad Content Management System",
+  "type": "project",
+  "keywords": ["php","learn","badcms","baikaldigitalacademy"],
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "BadCMS\\": "src/"
+    },
+    "files": [
+      "helpers/helpers.php"
+    ]
+  },
+  "authors": [
+    {
+      "name": "BadCoder",
+      "email": "badphpcms@gmail.com"
+    }
+  ],
+  "require": {
+    "ext-json": "*",
+    "badcms/core": "^0.1.1",
+    "badcms/extension-manager": "^0.1.1",
+    "badcms/badcms-ext-template": "^0.1.1"
+  },
+  "scripts": {
+    "post-root-package-install": [
+      "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+    ],
+    "post-create-project-cmd": [
+      "@php badcms-cli key:generate"
+    ]
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
