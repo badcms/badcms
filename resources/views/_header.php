@@ -9,7 +9,7 @@
 </head>
 <body>
 <?php
-if (can('view.menu')) {
+if (can('view.menu')):
 include("_menu.php");
 
 if (hasFlash()):?>
@@ -23,6 +23,6 @@ if (hasFlash()):?>
     </div>
 <?php
 endif; ?>
-<?
-}
+<?php
+endif;
 
