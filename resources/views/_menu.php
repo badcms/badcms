@@ -19,12 +19,12 @@
                 <header class="small">
                     <a>Plugins:</a>
                     <?php
-                    foreach ($menu as $menuItem) {
+                    foreach ($menu as $menuItem):
                         echo '<a href="'.$menuItem['action'].'" class="button">'.$menuItem["label"].'</a>';
-                    }
+                    endforeach;
                     ?>
                 </header>
-            <?
+            <?php
             endif; ?>
         </div>
     </div>

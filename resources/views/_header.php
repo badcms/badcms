@@ -12,17 +12,16 @@
 if (can('view.menu')):
 include("_menu.php");
 
-if (hasFlash()):?>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <?php
-                include("_messages.php"); ?>
-            </div>
+if (hasFlash()): ?>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <?php
+            include("_messages.php"); ?>
         </div>
     </div>
+</div>
 <?php
-endif; ?>
-<?php
+endif;
 endif;
 

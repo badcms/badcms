@@ -3,7 +3,7 @@
 require 'constants.php';
 
 // Сообщения об ошибках
-error_reporting(~E_NOTICE);
+error_reporting(E_ALL & ~E_WARNING & ~E_NOTICE);
 
 // Инициализируем зависимости
 [

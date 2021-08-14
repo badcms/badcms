@@ -37,7 +37,7 @@ class Functions
 /**
  * BadCMS Application instance
  */
-function &app($section = null, $data = null)
+function app($section = null, $data = null)
 {
     if (!isset(Functions::$APPLICATION)) {
         $request = [];

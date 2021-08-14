@@ -8,18 +8,15 @@ include(view_path("_header.php"));
  */
 
 use function BadCMS\Router\route;
-
 ?>
     <div class="container">
 
         <table class="striped">
             <caption>Пользователи
-                <?php
-                if (can('user.manage')): ?>
+                <?php if (can('user.manage')): ?>
                     <a class="button small" style="float: right" href="<?= route('users.create'); ?>"><i
                                 class="fas fa-plus-square"></i> Новый пользователь</a>
-                <?php
-                endif; ?>
+                <?php endif; ?>
             </caption>
             <thead>
             <tr>
@@ -32,7 +29,7 @@ use function BadCMS\Router\route;
             </tr>
             </thead>
             <tbody>
-            <?
+            <?php
             foreach ($users as $idx => $user): ?>
                 <tr>
                     <td>#<?= ++$idx; ?></td>
@@ -44,11 +41,8 @@ use function BadCMS\Router\route;
                         <?= \BadCMS\Models\User\actionLinks($user); ?>
                     </td>
                 </tr>
-            <?
-            endforeach; ?>
+            <?php endforeach; ?>
             </tbody>
         </table>
-
     </div>
-<?php
-include(view_path("_footer.php"));
+<?php include(view_path("_footer.php"));
