@@ -49,6 +49,25 @@ function init()
                 echo "\033[031m"."File .env not found in application root directory. Skipping"."\033[0m".PHP_EOL;
             }
         },
+        'routes:list' => function ($argv) {
+            $routes = \BadCMS\Application\app('routes');
+
+            $fields = array();
+            $action = 'Unknown';
+
+            foreach ($routes as $it => $key){
+                if(is_callable($key['action'])){
+                    $action = 'callback';
+                }elseif (is_string($key['action'])){
+                    $action = 'string';
+                }
+                array_push($fields, [$key['name'], $key['prefix'], $action]);
+            }
+
+            $tableBuilder = new \TableBuilder();
+            $table = $tableBuilder->getTableRows($fields, ["name", "uri", "action"]);
+            $tableBuilder->echoTableRows($table);
+        },
     ];
 }
 

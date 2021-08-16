@@ -32,7 +32,7 @@ function setRoutes()
 
                 return render('users/view', compact('user'));
             },
-            'uri' => '/users/{username}',
+            'uri' => '/users/{username}/view',
         ],
         'users.edit' => [
             'action' => function ($request, $username) {
