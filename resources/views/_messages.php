@@ -6,4 +6,9 @@ if ($message = flash()) {
     <?php
 }
 
-$message = flash("error");
+if ($message = flash("error")) {
+    ?>
+    <pre><?= $message; ?></pre>
+    <?php
+}
+
